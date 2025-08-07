@@ -1,0 +1,12 @@
+#AI model 
+model:
+  - HRNetPose.tflite,https://huggingface.co/qualcomm/HRNetPose/resolve/293afe6208152ae48f1ae904cbff4f4f10bc83b5/HRNetPose.tflite?download=true
+model_label:
+
+# apt packages
+apt:
+  - ros-jazzy-cv-bridge
+  - python3-opencv
+
+# python packages
+pip:
