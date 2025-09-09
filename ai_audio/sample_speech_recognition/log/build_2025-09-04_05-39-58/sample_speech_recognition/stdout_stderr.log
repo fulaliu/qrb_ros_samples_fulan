@@ -1,0 +1,21 @@
+running egg_info
+writing build/sample_speech_recognition/sample_speech_recognition.egg-info/PKG-INFO
+writing dependency_links to build/sample_speech_recognition/sample_speech_recognition.egg-info/dependency_links.txt
+writing entry points to build/sample_speech_recognition/sample_speech_recognition.egg-info/entry_points.txt
+writing requirements to build/sample_speech_recognition/sample_speech_recognition.egg-info/requires.txt
+writing top-level names to build/sample_speech_recognition/sample_speech_recognition.egg-info/top_level.txt
+reading manifest file 'build/sample_speech_recognition/sample_speech_recognition.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'build/sample_speech_recognition/sample_speech_recognition.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages/sample_speech_recognition-1.0.0-py3.12.egg-info' (and everything under it)
+Copying build/sample_speech_recognition/sample_speech_recognition.egg-info to /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages/sample_speech_recognition-1.0.0-py3.12.egg-info
+running install_scripts
+Installing qrb_ros_whisper_postprocess script to /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/sample_speech_recognition
+Installing qrb_ros_whisper_preprocess script to /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/sample_speech_recognition
+writing list of installed files to '/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/install.log'

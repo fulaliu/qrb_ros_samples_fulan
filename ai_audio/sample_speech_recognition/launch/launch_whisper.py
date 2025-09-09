@@ -21,12 +21,15 @@ def generate_launch_description():
     declared_args = [
         DeclareLaunchArgument(
             'encode_model_path',
-            default_value="/opt/model/whisper_tiny_en-whisperencoder.tflite",
+            #default_value="/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/whisper_tiny_en-whisperencoder.tflite",
+            #default_value="/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/Whisper-Base_HfWhisperEncoder.bin",
+            default_value="/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/WhisperEncoder.bin",
             description='Path to the encode model file'
         ),
         DeclareLaunchArgument(
             'decode_model_path',
-            default_value="/opt/model/whisper_tiny_en-whisperdecoder.tflite",
+            #default_value="/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/whisper_tiny_en-whisperdecoder.tflite",
+            default_value="/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/WhisperDecoder.bin",
             description='Path to the decode model file'
         ),
     ]
@@ -49,8 +52,8 @@ def generate_launch_description():
     name = "nn_inference_node_encode",
     parameters = [
       {
-        #"backend_option": "/usr/lib/libQnnHtp.so",
-        "backend_option": "",
+        "backend_option": "/usr/lib/libQnnHtp.so",
+        #"backend_option": "",
         "model_path": encode_model_path
       }],
     remappings = [
@@ -73,8 +76,8 @@ def generate_launch_description():
     name = "nn_inference_node_decode",
     parameters = [
       {
-        #"backend_option": "/usr/lib/libQnnHtp.so",
-        "backend_option": "",
+        "backend_option": "/usr/lib/libQnnHtp.so",
+        #"backend_option": "",
         "model_path": decode_model_path
       }],
     remappings = [

@@ -1,0 +1,27 @@
+[1.008s] Invoking command in '/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/sample_speech_recognition build --build-base /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/build install --record /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/install.log --single-version-externally-managed install_data
+[1.265s] running egg_info
+[1.278s] writing build/sample_speech_recognition/sample_speech_recognition.egg-info/PKG-INFO
+[1.279s] writing dependency_links to build/sample_speech_recognition/sample_speech_recognition.egg-info/dependency_links.txt
+[1.279s] writing entry points to build/sample_speech_recognition/sample_speech_recognition.egg-info/entry_points.txt
+[1.280s] writing requirements to build/sample_speech_recognition/sample_speech_recognition.egg-info/requires.txt
+[1.280s] writing top-level names to build/sample_speech_recognition/sample_speech_recognition.egg-info/top_level.txt
+[1.308s] reading manifest file 'build/sample_speech_recognition/sample_speech_recognition.egg-info/SOURCES.txt'
+[1.308s] adding license file 'LICENSE'
+[1.309s] writing manifest file 'build/sample_speech_recognition/sample_speech_recognition.egg-info/SOURCES.txt'
+[1.309s] running build
+[1.309s] running build_py
+[1.310s] copying sample_speech_recognition/qrb_ros_whisper_preprocess.py -> /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/build/lib/sample_speech_recognition
+[1.311s] running install
+[1.319s] running install_lib
+[1.333s] copying /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/build/lib/sample_speech_recognition/qrb_ros_whisper_preprocess.py -> /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages/sample_speech_recognition
+[1.334s] byte-compiling /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages/sample_speech_recognition/qrb_ros_whisper_preprocess.py to qrb_ros_whisper_preprocess.cpython-312.pyc
+[1.336s] running install_data
+[1.337s] copying sample_speech_recognition/qrb_ros_whisper_preprocess.py -> /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/sample_speech_recognition
+[1.337s] running install_egg_info
+[1.353s] removing '/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages/sample_speech_recognition-1.0.0-py3.12.egg-info' (and everything under it)
+[1.353s] Copying build/sample_speech_recognition/sample_speech_recognition.egg-info to /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages/sample_speech_recognition-1.0.0-py3.12.egg-info
+[1.354s] running install_scripts
+[1.466s] Installing qrb_ros_whisper_postprocess script to /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/sample_speech_recognition
+[1.466s] Installing qrb_ros_whisper_preprocess script to /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/sample_speech_recognition
+[1.467s] writing list of installed files to '/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/install.log'
+[1.510s] Invoked command in '/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/install/sample_speech_recognition/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/sample_speech_recognition build --build-base /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/build install --record /home/ubuntu/ASR/qrb_ros_samples_fulan/ai_audio/sample_speech_recognition/build/sample_speech_recognition/install.log --single-version-externally-managed install_data

@@ -133,12 +133,13 @@ class whisper_preprocess_node(Node):
             mel_filter, audio, max_audio_samples, N_FFT, HOP_LENGTH )        
         
         #publish logmel data to qnn interface
-        logmel_data = mel_input.tobytes()
+        #logmel_data = mel_input.tobytes()
+        logmel_data = mel_input.astype(np.float16).tobytes()
         msg = TensorList()
         #tensor list to input
         tensor = Tensor()
-        tensor.data_type = 0
-        tensor.name = "qrb_ros_whisper__input_tensor"
+        tensor.data_type = 2
+        tensor.name = "qrb_ros_whisper_input_tensor"
         tensor.shape = [1,80, 3000]
         tensor.data = logmel_data
         

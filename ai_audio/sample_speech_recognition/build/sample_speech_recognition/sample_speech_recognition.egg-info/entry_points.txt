@@ -1,0 +1,3 @@
+[console_scripts]
+qrb_ros_whisper_postprocess = sample_speech_recognition.qrb_ros_whisper_postprocess:main
+qrb_ros_whisper_preprocess = sample_speech_recognition.qrb_ros_whisper_preprocess:main

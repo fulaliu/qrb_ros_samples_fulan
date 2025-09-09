@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: sample-speech-recognition
+Version: 1.0.0
+Summary: speech recognition with whisper model
+Maintainer: Fulan Liu
+Maintainer-email: quic_fulaliu@quicinc.com
+License: BSD-3-Clause
+License-File: LICENSE
