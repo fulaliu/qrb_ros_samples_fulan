@@ -3,16 +3,15 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
-class ReceiveWhisperText : public BT::StatefulActionNode
-{
+class ReceiveWhisperText : public BT::StatefulActionNode {
 public:
-  ReceiveWhisperText(const std::string & name, const BT::NodeConfig & config,
+  ReceiveWhisperText(const std::string &name, const BT::NodeConfig &config,
                      rclcpp::Node::SharedPtr node);
 
   static BT::PortsList providedPorts();
-  BT::NodeStatus onStart()  override;
+  BT::NodeStatus onStart() override;
   BT::NodeStatus onRunning() override;
-  void           onHalted()  override {}
+  void onHalted() override {}
 
 private:
   rclcpp::Node::SharedPtr node_;

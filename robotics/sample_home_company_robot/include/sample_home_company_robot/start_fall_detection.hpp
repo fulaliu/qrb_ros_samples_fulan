@@ -3,10 +3,9 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/bool.hpp>
 
-class StartFallDetection : public BT::SyncActionNode
-{
+class StartFallDetection : public BT::SyncActionNode {
 public:
-  StartFallDetection(const std::string & name, const BT::NodeConfig & config,
+  StartFallDetection(const std::string &name, const BT::NodeConfig &config,
                      rclcpp::Node::SharedPtr node);
 
   static BT::PortsList providedPorts() { return {}; }

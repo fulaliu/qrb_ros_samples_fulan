@@ -7,16 +7,16 @@ static constexpr uint8_t CMD_START = 0x01;
 SendFollowMeService::SendFollowMeService(const std::string &name,
                                          const BT::NodeConfig &config,
                                          rclcpp::Node::SharedPtr node)
-  : BT::StatefulActionNode(name, config), node_(node)
-{
+    : BT::StatefulActionNode(name, config), node_(node) {
   // 修改 service 类型 + 名字
-  client_ = node_->create_client<follow_me::srv::StateControl>("/follow_me/state_control");
+  client_ = node_->create_client<follow_me::srv::StateControl>(
+      "/follow_me/state_control");
 }
 
-BT::NodeStatus SendFollowMeService::onStart()
-{
+BT::NodeStatus SendFollowMeService::onStart() {
   if (!client_->wait_for_service(std::chrono::seconds(1))) {
-    RCLCPP_WARN(node_->get_logger(), "[SendFollowMeService] Service not available");
+    RCLCPP_WARN(node_->get_logger(),
+                "[SendFollowMeService] Service not available");
   }
 
   // 修改 request 类型
@@ -25,7 +25,7 @@ BT::NodeStatus SendFollowMeService::onStart()
   // 映射原逻辑：START -> set_state = 1
   req->set_state = CMD_START;
 
-  future_       = client_->async_send_request(req).share();
+  future_ = client_->async_send_request(req).share();
   request_sent_ = true;
 
   RCLCPP_INFO(node_->get_logger(), "[SendFollowMeService] Sent state set to 1");
@@ -33,19 +33,21 @@ BT::NodeStatus SendFollowMeService::onStart()
   return BT::NodeStatus::RUNNING;
 }
 
-BT::NodeStatus SendFollowMeService::onRunning()
-{
+BT::NodeStatus SendFollowMeService::onRunning() {
   rclcpp::spin_some(node_);
 
-  if (future_.wait_for(std::chrono::milliseconds(0)) == std::future_status::ready) {
+  if (future_.wait_for(std::chrono::milliseconds(0)) ==
+      std::future_status::ready) {
     auto resp = future_.get();
 
     // 假设新 service 仍然有 success 字段（一般是这样）
     if (resp->success) {
-      RCLCPP_INFO(node_->get_logger(), "[SendFollowMeService] Service returned success=true");
+      RCLCPP_INFO(node_->get_logger(),
+                  "[SendFollowMeService] Service returned success=true");
       return BT::NodeStatus::SUCCESS;
     } else {
-      RCLCPP_WARN(node_->get_logger(), "[SendFollowMeService] Service returned success=false");
+      RCLCPP_WARN(node_->get_logger(),
+                  "[SendFollowMeService] Service returned success=false");
       return BT::NodeStatus::FAILURE;
     }
   }

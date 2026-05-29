@@ -3,10 +3,9 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
-class SendToTTS : public BT::SyncActionNode
-{
+class SendToTTS : public BT::SyncActionNode {
 public:
-  SendToTTS(const std::string & name, const BT::NodeConfig & config,
+  SendToTTS(const std::string &name, const BT::NodeConfig &config,
             rclcpp::Node::SharedPtr node);
 
   static BT::PortsList providedPorts();
