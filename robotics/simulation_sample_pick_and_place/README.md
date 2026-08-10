@@ -180,7 +180,7 @@ rosdep update
 
 ```bash
 mkdir -p ~/qrb_ros_sample_ws/src && cd ~/qrb_ros_sample_ws/src
-git clone -b jazzy-rel https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
+git clone https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
 ```
 
 - Build the sample from source:
