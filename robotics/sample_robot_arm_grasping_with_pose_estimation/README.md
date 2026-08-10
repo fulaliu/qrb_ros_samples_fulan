@@ -88,7 +88,8 @@ Typical hardware: **Orbbec D335** (or compatible RGB-D) + **RML63** arm with ven
 
 1. Prerequisites installation
     ```bash
-    cd robotics/sample_robot_arm_grasping_with_pose_estimation/scripts
+    git clone https://github.com/qualcomm-qrb-ros/qrb_ros_samples.git
+    cd qrb_ros_samples/robotics/sample_robot_arm_grasping_with_pose_estimation/scripts
     chmod +x install.bash && bash install.bash
     ```
 
@@ -102,6 +103,18 @@ Typical hardware: **Orbbec D335** (or compatible RGB-D) + **RML63** arm with ven
     export POSE_MODEL_PATH=<YOUR DCOMPRESSED PATH>/trained_checkpoints/trained_checkpoints/ycb/pose_model_26_0.012863246640872631.pth
     export REFINE_MODEL_PATH=<YOUR DCOMPRESSED PATH>/trained_checkpoints/trained_checkpoints/ycb/pose_refine_model_69_0.009449292959118935.pth
     bash install.bash --onnx_export
+    ```
+
+    - If has the ONNX models, move them to `robotics/sample_robot_arm_grasping_with_pose_estimation/grasp_perception/models/ycb_models` as shown below.
+
+    ```bash
+      ./
+      ├── ycb_models
+      │   ├── densefusion_ycb_posenet.onnx
+      │   ├── densefusion_ycb_refiner.onnx
+      │   └── external-data
+      └── yolo26n_seg_models
+          └── yolo26n-seg.onnx
     ```
 
 2. Using test command to ensure `Orbbec camera` works well.
@@ -148,24 +161,22 @@ export ROS_DOMAIN_ID=55   # optional; match your network
 ros2 launch grasp_perception inference_with_camera_stream.launch.py
 ```
 
-3. **Execution (real arm)** — in another terminal, with the same `ROS_DOMAIN_ID` if distributed:
+3. **Execution (real arm)** — in another terminal, first set the device IP for the RML63 connection via the Python API:
+```bash
+sudo ip addr add 192.168.1.101/24 dev end0
+sudo ip link set end0 up
+```
+
+4. Then launch the `grasp_execution` node for pick and place execution:
 
 ```bash
 source /path/to/your_ws/install/setup.bash
 export ROS_DOMAIN_ID=55 # optional; match your network
+
 # If not already installed editable:
 python grasp_execution/grasp_execution/src/main.py --ip 192.168.1.18 --pose-topic /pose_estimation_result
 ```
 
-4. **(Optional)Perception (offline scene folder)** — publishes synthetic `/camera/...` from files and runs the same node:
-
-```bash
-source /path/to/your_ws/install/setup.bash
-ros2 launch grasp_perception inference_with_local_file.launch.py \
-  scene_dir:=/path/to/scene_with_rgb_and_depth_subfolders
-```
-
-Adjust `scene_dir` to a directory that contains your recorded `rgb/` and `depth/` images (see launch file defaults for layout).
 
 </details>
 
