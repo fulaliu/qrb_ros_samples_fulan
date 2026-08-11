@@ -146,6 +146,9 @@ export ROS_DOMAIN_ID=78
 #Launch the map_nav_setup.launch.py scripts
 ros2 launch simulation_remote_assistant map_nav_setup.launch.py
 
+#Optional: shrink the mapping control loop period if the robot overshoots turns on your machine
+ros2 launch simulation_remote_assistant map_nav_setup.launch.py control_period:=0.05
+
 #Launch the yolo object detection script
 
 #Qualcomm Dragonwing™ IQ-9075 EVK 
