@@ -56,7 +56,7 @@ The **Sample Fall Detection** package is a ROS 2 node that demonstrates real-tim
 
 | Service Name | Service Type | Description |
 |--------------|--------------|-------------|
-| `/enable_fall_detection` | `std_srvs/SetBool` | Enable or disable fall detection processing |
+| `/fall_detection/state_control` | `std_srvs/srv/SetBool` | Enable or disable fall detection processing |
 
 ## 🎯 Supported Targets
 
@@ -137,17 +137,17 @@ Ensure you have the following dependencies installed:
 sudo apt install ros-jazzy-cv-bridge ros-jazzy-sensor-msgs ros-jazzy-std-msgs ros-jazzy-std-srvs
 
 # Install Python dependencies
-sudo apt install python3-opencv python3-numpy
+sudo apt install python3-opencv python3-numpy  python3-pip portaudio19-dev
 
 # Install QRB ROS Camera
-sudo apt install ros-jazzy-qrb-ros-camera
+sudo apt install ros-jazzy-qrb-ros-camera 
 
 # Install Edge Impulse SDK (if not already installed)
 # Follow Edge Impulse documentation for your specific model
  python3 -m venv venv_qaihub
  source venv_qaihub/bin/activate
 #will enter the python virtual env
- pip3 install edge_impulse_linux
+ pip3 install edge_impulse_linux pyaudio
 
 ```
 
@@ -206,21 +206,6 @@ This will:
 2. Launch the fall detection node
 3. Begin processing camera frames for fall detection
 
-### Monitor Fall Detection Events
-
-In a new terminal, subscribe to the fall detection topic:
-
-```bash
-ros2 topic echo /fall_detected
-```
-
-When a fall is detected, you will see:
-
-```
-data: true
----
-```
-
 ### Enable/Disable Detection
 
 You can dynamically enable or disable fall detection using the service:
@@ -235,6 +220,21 @@ ros2 service call /enable_fall_detection std_srvs/srv/SetBool "{data: false}"
 
 ```bash
 ros2 service call /enable_fall_detection std_srvs/srv/SetBool "{data: true}"
+```
+
+### Monitor Fall Detection Events
+
+In a new terminal, subscribe to the fall detection topic:
+
+```bash
+ros2 topic echo /fall_detected
+```
+
+When a fall is detected, you will see:
+
+```
+data: true
+---
 ```
 
 ### View Camera Stream
